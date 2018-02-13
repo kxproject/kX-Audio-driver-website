@@ -1,4 +1,4 @@
-## kX Translation Guide
+# kX Translation Guide
 
 There are two main fields of work: to translate the kX Documentation and to translate the kX Audio Driver interface. You can choose any field you wish. If you wish to translate the documentation, please go to our Support Forum and find a topic dealing with documentation translations.
 
@@ -14,7 +14,7 @@ Rename the file into 'kxskin.rar' and use WinRar to unpack the file. You will ne
 'lang.ini'. After you get the file, open it in any text editor (such as NotePad) and add/update the translation the following way:
 
 
-# an example:
+## an example:
 
 - function=Event:
 - function.222='your translation here'
