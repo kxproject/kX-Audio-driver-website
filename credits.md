@@ -1,7 +1,7 @@
 # Credits
 
 kX Audio Driver and kX mixer were written by me, Eugene Gavrilov.
-The kX Audio Driver is Freeware, but since I have spent many hours working on this program, I would appreciate any donations which you can offer/spare.
+The kX Audio Driver is Opensource under GNU GPL v2.
 
 I would like to thank Hanz Petrov from the Independent EMU10K1 Programmers Site for his support; Soeren Bovbjerg for driver testing and feedback; Friedemann Wolpert for Web Hosting, Dennis Samuelsson and Luki Goldschmidt for the kX Site mirrors and web-hosting.
 
