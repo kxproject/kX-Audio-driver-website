@@ -5,3 +5,4 @@ This repostiory is a simple copy-paste from the original kxproject.com website.
 Some of these documents are outdated, some may not be 100% accurate.
 Please also visit kX-Audio-driver-Documentation repository.
 
+Please read 'introduction' file above for details.
