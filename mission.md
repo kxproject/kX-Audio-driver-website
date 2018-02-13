@@ -1,11 +1,11 @@
-## Mission
+# Mission
 
 Our mission is to allow end-users unfettered access to all hardware features of the kX-compatible*
 soundcards, to promote the development of supporting applications and to encourage a free exchange 
 of information useful towards furthering software development for all kX-compatible soundcards. 
 Our motto is: "Expanding the Potential Exponentially".
 
-# Historical background
+## Historical background
 
 The kX Project was born out of a perceived need to expand the possiblities for use by musicians
 of the kX-compatible soundcards, under new and emerging operating systems which no longer support 
