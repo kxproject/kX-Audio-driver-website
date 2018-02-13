@@ -11,7 +11,7 @@ EAX/EAX2.0/EAX3.0 not fully supported.
 - Certain hardware configurations can cause constant beeping instead of sound - please review our forum for details.
 SoundFonts
 
-Maximum single sample size for SoundFonts may be limited by OS memory settings. Review our FAQ for details
+- Maximum single sample size for SoundFonts may be limited by OS memory settings. Review our FAQ for details
 Hardware-Dependent
 
 - Settings for phases, levels, etc. may not be optimized for uncommon AC97 codec versions.
