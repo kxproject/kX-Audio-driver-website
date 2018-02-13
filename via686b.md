@@ -1,6 +1,6 @@
-VIA 686B Issues
+# VIA 686B Issues
 
-Introduction
+## Introduction
 In December 2000 VIA announced their new 686B Southbridge, in conjunction with the KT133A chipset. The new Southbridge differed from its predecessor by including native support for ATA100.
 
 With the new Southbridge and KT133A motherboards, various users started experiencing data corruption problems as well as system instability when transferring files, listening to music, or anything that utilized the PCI bus. Typically, users with a KT133A chipset, 686B Southbridge and a Creative Labs Sound Blaster Live sound card were affected.
@@ -16,9 +16,9 @@ Install George's PCI Latency patch (this is the only way of solving problems rel
 Who needs this patch
 Anyone using a 686B-based motherboard, regardless of Operation System.
 
-Conclusion
+# Conclusion
 We recommend using George's PCI Latency version 0.19 available here or here*.
 You should also install the latest VIA drivers available here and update your System BIOS. 
 
-References
+# References
 http://www.viahardware.com/686b_1.shtm
