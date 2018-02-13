@@ -1,4 +1,4 @@
-Credits
+# Credits
 
 kX Audio Driver and kX mixer were written by me, Eugene Gavrilov.
 The kX Audio Driver is Freeware, but since I have spent many hours working on this program, I would appreciate any donations which you can offer/spare.
