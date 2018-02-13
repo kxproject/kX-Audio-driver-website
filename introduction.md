@@ -1,4 +1,4 @@
-##Welcome to the kX Project!
+# Welcome to the kX Project!
 
 The kX Project is an independent development project, focused on providing free WDM Audio Drivers 
 for kX-Compatible sound cards. Read our Mission statement for a quick introduction.
