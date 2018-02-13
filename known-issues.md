@@ -1,6 +1,6 @@
-Issues
+## Issues
 
-General
+# General
 
 Front and Rear speakers are swapped by default (this is intentional) - explanation why here.
 The default speaker configuration is 'Stereo' (2.0) -- you can change this setting by tweaking the 'Surrounder' options.
