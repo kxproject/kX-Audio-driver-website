@@ -16,9 +16,9 @@ Install George's PCI Latency patch (this is the only way of solving problems rel
 Who needs this patch
 Anyone using a 686B-based motherboard, regardless of Operation System.
 
-# Conclusion
+## Conclusion
 We recommend using George's PCI Latency version 0.19 available here or here*.
 You should also install the latest VIA drivers available here and update your System BIOS. 
 
-# References
+## References
 http://www.viahardware.com/686b_1.shtm
