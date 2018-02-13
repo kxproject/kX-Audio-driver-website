@@ -1,13 +1,14 @@
-Technical Guide for Playback and Recording
-Tweaking kX Driver for ultimate performance
+# Technical Guide for Playback and Recording
+# Tweaking kX Driver for ultimate performance
 
 Status of this document: DRAFT
 Comments and bug reports are welcome
-Introduction
+
+## Introduction
 
 kX-compatible audio cards are based on the E-mu 10k1 and 10k2 processors, which are quite complicate devices. Using all the features of these audio cards requires certain level of understanding of their internals.
 
-Installation and system requirements
+## Installation and system requirements
 
 First, you need to check if the kX Audio Driver has been installed correctly and is functioning properly. Right after reboot, you should see kX Tray icon in your System Tray. Also, check 'Control Panel' - 'Sounds and Audio Devices' - 'Audio' tab: for each Wave device click 'Advanced...' button and check if 'Speaker set-up' is set to '5.1 surround sound speakers', 'Hardware acceleration' is set to 'Full' and 'Sample rate conversion quality' is set to 'Best'.
 
@@ -19,7 +20,7 @@ kX Audio Driver exposes different audio devices: Wave 0/1, Wave 4/5 etc... Any r
 
 The best results can only be achieved under Windows 2000, Windows XP and later OSes. Windows 98SE and Windows Millenium have certain bugs in the KMixer and DirectSound implementations, causing severe audio distortion (in particular, -6dB software-based attenuation).
 
-Playing back 24/96 content
+## Playing back 24/96 content
 
 The only card that supports 'native' 24/96 playback is Audigy2. kX Audio Driver (version 3537 and later) fully supports this feature. However, you need to keep in mind that 24/96 functionality is implemented in a 'tricky' way due to hardware design. Since the DSP is still operating at 16(24)/48, all the 24/96 content is played back via a separate hardware chip called 'p16v' (Some additinal information can be found in our Audigy2 / P16V Routings guide). The audio data gets directly to the i2s / spdif codecs and interfaces and is NOT processed by the DSP. However, the p16v output is also routed to the 10k2 chip and is available in the DSP by means of the 'p16v' plugin. Note that the incoming 24/96 audio data is resampled before it gets into the DSP. Both 10k2 and p16v output streams are mixed (and re-sampled when necessary) before they get to the i2s / spdif codecs and interfaces. (More information on i2s / spdif assignments can be found in our kX IO Assignments guide).
 
@@ -35,14 +36,14 @@ Please keep in mind that while measuring 'Wave HQ' performance (24/96 playback),
 
 Disabling Reverberation: Since reverberation algorithms usually produce infinite response ('reverb trail'), simply setting Reverb level to '0' won't give you '-inf' at the outputs. You will need to manually disable the particular Reverb effect in the kX DSP window.
 
-Audio Interfaces
+## Audio Interfaces
 
 There are at least five different audio interfaces supported by the kX Audio Driver:
-WinMM
-DirectSound
-Kernel Streaming
-ASIO
-GSIF
+- WinMM
+- DirectSound
+- Kernel Streaming
+- ASIO
+- GSIF
 Each interface has its own limitations and features. Some of them come from the nature of the particular interface, while the others are hardware-related.
 
 Kernel Streaming interface is used by Sonar, Cakewalk, Foobar2000 and other applications. This interface passes the data directly to the driver and bypasses any OS audio processing layers. This ensures the audio card is operating in the desired mode, however, if the particular audio format is not supported, an error will be generated. 'Native' hardware-accelerated formats for 'Wave 0/1' device are: 16 bit, 100Hz..191199Hz. Any incoming audio data is automatically resampled (in hardware) to 16/48 format. Since software resampling algorithms might give you better audio quality, it is recommended to set your audio players to 16/48 format and use software SRCs.
@@ -78,13 +79,13 @@ In any case, the information about the actual format and sampling rate of the au
 
 ASIO and GSIF interfaces currently operate at 16/48 (also at 16/44.1 for ASIO, playback only). There will be a separate ASIO driver for 24/96 playback and recording in the future (of course, for Audigy2-only based cards).
 
-24/48 and bit-to-bit Playback
+## 24/48 and bit-to-bit Playback
 
 kX Audio Driver supports a special 'trick' in order to support 24/48 playback via the DSP for Audigy and Audigy2 cards. In order to use this feature you will need to set your audio player to 24/48 format (any other sampling rate is not supported!) and replace the 'FXBus' plugin by the 'FXBusX' plugin in the kX DSP. In order to check, if the audio playback is really performed in 24/48 format, open the 'Analyzer' window of the kX Mixer: you should see 'Dark Green' strips (while 'generic' audio streams are colored red). In most cases, this 'trick' doesn't affect any audio applications configured to operate at 16 bit. However, the 'FXBusX' plugin affects incoming audio signal. Please review 'DSP Resampling' below.
 
 Please note, that the only device that supports this 'trick' is 'Wave 0/1'. Also, your application should be using DirectSound interface, since WinMM streams will be automatically converted to 16/48 by the KMixer.
 
-DSP Resampling
+## DSP Resampling
 
 It is widely known that 10k1 and 10k2-based audio cards perform audio resampling even when the incoming audio signal is 16/48. This happens due to not-so-perfect implementation of the SRC algorithms in hardware. For Audigy and Audigy2 cards (and, probably, for 10k1-based cards with chip revision >= 7 as well) the 'modified' 16/48 audio stream can be restored by using 'b2b' or 'FXBusX' plugins in the kX DSP.
 
@@ -95,13 +96,13 @@ The main difference is that FXBusX not only restores the 16th bit, but also perf
 
 The output signal (for instance, of the SPDIF outputs) might get truncated / rounded by hardware. This option is card-dependent (certain cards perform that, while the others don't). That's why it is recommended to check bit-to-bit playback and the particular B2B/FXBusX chain before using it (for instance, by trying the 'Direct SPDIF Recording' method and a SPDIF loopback cable).
 
-Volume Levels and kX DSP settings
+## Volume Levels and kX DSP settings
 
 In order to avoid any software processing and audio quality loss, the volume levels should be set as follows:
-Master Level: 100%
-Wave level: 100% (both, in kX Mixer and in your audio application)
-Master Recording level: 100%
-All inputs and outputs are to be set to '0dB' or muted
+- Master Level: 100%
+- Wave level: 100% (both, in kX Mixer and in your audio application)
+- Master Recording level: 100%
+- All inputs and outputs are to be set to '0dB' or muted
 To avoid recording 'What U Hear', set Wave, Synth, FX1 and FX2 Recording Levels to -inf
 In Direct SPDIF Recording no kX Mixer level affects the signal. In 'p16v' 24/96 recording, only the 'Master Recording Level' affects the signal.
 
@@ -109,13 +110,13 @@ When testing audio quality, it might be necessary to unload 'Surrounder' effect,
 
 NOTE: if you still need to change the volume (e.g. in order to set RMAA levels to -1.0), in any playback mode please use 'Master Volume' since it is the only level that is always hardware-accelerated.
 
-Recording
+## Recording
 
-Direct SPDIF Recording
+## Direct SPDIF Recording
 
 some information is already available in our Direct recording guide. certain additional stuff to be added
 
-Bit-to-bit Wave recording
+## Bit-to-bit Wave recording
 
 [in short]: FXBus - b2b - recl 
 TO BE WRITTEN
