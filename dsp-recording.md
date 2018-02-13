@@ -1,6 +1,6 @@
-Direct Recording Guide
+## Direct Recording Guide
 
-Introduction
+# Introduction
 
 The 10k1 and 10k2-based audio cards support SPDIF digital inputs and outputs. It is widely 
 known that the 10k1 and 10k2 chips operate at a fixed sampling rate, 48000 Hz. So, in order
@@ -11,7 +11,7 @@ is why it is theoretically impossible to record SPDIF input bit-to-bit (make an 
 of the digital signal). The problem cannot be fixed for 10k1-based boards, however, the 10k2 
 chip (used in Audigy and Audigy2 series of cards) has a special feature - Direct SPDIF recording.
 
-Detailed description
+# Detailed description
 
 The 'Direct SPDIF Recording' is activated via kX Mixer (on the main page). Due to the nature 
 of this recording method, the signal completely bypasses the DSP, which is why it is not 
@@ -30,7 +30,7 @@ every 10k2-based board (such as Audigy1 and Audigy2). Also note that it might re
 seconds for the SPDIF Input to synchronize to the incoming signal, if its sampling rate is more 
 than 48000. If the signal is distorted or audio is muted, try unplugging and re-plugging the SPDIF cable.
 
-Conclusion
+# Conclusion
 
 Direct SPDIF recording drammatically improves the recording quality of digital sources when the 
 main goal is to make an 'exact' copy of the digital signal. The improvements include better 
