@@ -1,4 +1,4 @@
-Front and Rear issues
+## Front and Rear issues
 
 These issues pertain to all Creative cards, but not to the E-mu APS and some Audigy2 Platinum Ex cards. Creative audio cards based on the EMU10kX audio DSP require a DAC (Digital to Analog Converter) in order to produce analog output. In general, this task is typically performed by either AC97 Codecs or I2S Codecs.
 
